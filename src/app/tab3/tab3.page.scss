@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 .titulo {
     color: var(--ion-color-primary);
     font-weight: bold;
@@ -6,4 +8,114 @@
 
 p#descripcion {
     text-align: justify;
+}
+
+/* Global styles in styles.scss or your global SCSS file */
+
+.center-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    width: 100%; /* Full width of the container */
+}
+
+* {
+    font-family: 'Pacifico', cursive;
+}
+
+ion-content {
+    text-align: center;
+}
+
+/* General page styling */
+ion-header {
+    --background: #8de6a3;
+    /* Header background color */
+    --color: #fff;
+    /* Header text color */
+    padding: 0;
+}
+
+ion-toolbar {
+    --background: #8de6a3;
+    /* Toolbar background color */
+}
+
+ion-title {
+    font-size: 1.5rem;
+    /* Title font size */
+    font-weight: bold;
+    /* Title font weight */
+}
+
+/* Card styling */
+ion-card {
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Form item styling */
+ion-item {
+    --padding-start: 0;
+    /* Remove default padding */
+    --inner-padding-end: 0;
+    --inner-padding-start: 0;
+}
+
+ion-label {
+    font-size: 1rem;
+    color: #333;
+    /* Label text color */
+}
+
+/* Input styling */
+ion-input,
+ion-textarea {
+    --padding-start: 0.5rem;
+    /* Add padding inside inputs */
+    --padding-end: 0.5rem;
+}
+
+/* Button styling */
+ion-button {
+    margin-top: 1rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    --background: #8de6a3;
+    /* Button background color */
+    --color: #fff;
+    /* Button text color */
+    --padding-top: 0.75rem;
+    --padding-bottom: 0.75rem;
+}
+
+ion-button[color="danger"] {
+    --background: #f53d3d;
+    /* Danger button background color */
+}
+
+/* DateTime picker styling */
+ion-datetime {
+    --padding-start: 0.5rem;
+    /* Padding for datetime picker */
+    --padding-end: 0.5rem;
+    display: block;
+    margin: 0 auto; /* Center within the parent container */
+}
+
+/* Responsive styling */
+@media (max-width: 576px) {
+    ion-card {
+        margin: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    ion-title {
+        font-size: 1.2rem;
+    }
+
+    ion-button {
+        font-size: 1rem;
+    }
 }

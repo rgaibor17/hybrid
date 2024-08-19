@@ -1,31 +1,39 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Acerca de
-    </ion-title>
+    <ion-title>Agendar Cita</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-
+<ion-content padding>
   <ion-card>
     <ion-card-header>
-
-      <ion-card-title class="titulo">Descripción</ion-card-title>
-
+      <ion-card-title>Detalles de Cita</ion-card-title>
     </ion-card-header>
-
+    
     <ion-card-content>
-      <p id="descripcion">
-        Una aplicación móvil desarrollada en Angular Ionic es un software multiplataforma que utiliza el framework
-        Angular para construir la lógica y la estructura de la aplicación, junto con el framework Ionic para crear una
-        interfaz de usuario atractiva y funcional. Ionic proporciona componentes y herramientas para diseñar
-        aplicaciones que se sienten y se ven nativas en dispositivos iOS y Android. La aplicación se puede desplegar
-        tanto en la web como en tiendas de aplicaciones móviles. Utiliza tecnologías web como HTML, CSS y JavaScript, lo
-        que facilita la reutilización de código y la implementación rápida.
-      </p>
+      <form (ngSubmit)="onSubmit()" #appointmentForm="ngForm">
+        <ion-label position="floating">Nombre de la Mascota</ion-label>
+        <ion-item>
+          <ion-input type="text" [(ngModel)]="appointment.petName" name="petName" required></ion-input>
+        </ion-item>
+
+        <ion-label position="floating">Nombre del Dueño</ion-label>
+        <ion-item>
+          <ion-input type="text" [(ngModel)]="appointment.ownerName" name="ownerName" required></ion-input>
+        </ion-item>
+
+        <ion-label position="floating">Fecha</ion-label>
+        <ion-item class="center-container">
+          <ion-datetime display-format="MMM DD, YYYY HH:mm" picker-format="MMM DD, YYYY HH:mm" [(ngModel)]="appointment.dateTime" name="dateTime"></ion-datetime>
+        </ion-item>
+
+        <ion-label position="floating">Notas</ion-label>
+        <ion-item>
+          <ion-textarea [(ngModel)]="appointment.notes" name="notes"></ion-textarea>
+        </ion-item>
+
+        <ion-button expand="full" type="submit">Agendar</ion-button>
+      </form>
     </ion-card-content>
-
   </ion-card>
-
 </ion-content>
